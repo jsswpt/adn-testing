@@ -1,0 +1,41 @@
+@use "../../shared/modules/breakpoints.module";
+@use "../../shared/modules/colors.module";
+@use "../../shared/modules/container.module";
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/typography.module";
+
+.container {
+  @include container.container;
+}
+
+.main {
+  padding-top: units.$header-height + units.$unit * 3;
+  padding-bottom: units.$unit * 3;
+}
+
+.broadcrumb {
+  margin-bottom: units.$unit * 3;
+}
+
+.catalog_container {
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 5;
+}
+
+.title {
+  @include typography.h1 {
+    color: colors.$white;
+  }
+}
+
+.catalog_middle {
+  display: flex;
+  gap: units.$catalog-middle-gap;
+}
+
+.games_wrap {
+  width: calc(
+    breakpoints.$xl - units.$filters-bar-width - units.$catalog-middle-gap
+  );
+}

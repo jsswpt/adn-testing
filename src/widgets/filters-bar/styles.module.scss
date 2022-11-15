@@ -1,0 +1,9 @@
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
+
+.bar {
+  position: sticky;
+  top: units.$header-height;
+  height: 30vh;
+  width: units.$filters-bar-width;
+}

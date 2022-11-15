@@ -1,0 +1,15 @@
+@use "./breakpoints.module";
+
+@mixin container {
+  @include breakpoints.screen-xs {
+    width: 100%;
+  }
+  @include breakpoints.screen-md {
+    width: breakpoints.$md;
+    margin: 0 auto;
+  }
+  @include breakpoints.screen-xl {
+    width: breakpoints.$xl;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,16 @@
+@use "../../modules/units.module";
+@use "../../modules/typography.module";
+
+.input {
+  border: 1px solid white;
+  outline: none;
+  background: none;
+  color: white;
+  height: units.$unit * 5;
+
+  @include typography.body2;
+}
+
+.fullWidth {
+  width: 100%;
+}

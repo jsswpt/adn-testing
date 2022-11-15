@@ -1,3 +1,6 @@
+import { Catalog } from "pages/catalog/catalog";
+import "./index.scss";
+
 export const App = () => {
-  return <>app</>;
+  return <Catalog />;
 };
