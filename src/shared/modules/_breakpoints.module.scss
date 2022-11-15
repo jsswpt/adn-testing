@@ -1,0 +1,21 @@
+$xs: 0;
+$md: 768px;
+$xl: 1176px;
+
+@mixin screen-xs {
+  @media (min-width: $xs) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
