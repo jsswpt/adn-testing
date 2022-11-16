@@ -7,6 +7,8 @@ const games: Omit<Game, "id">[] = [
     name: "Grand Theft Auto V",
     oldPrice: 5000,
     price: 2500,
+    genre: ["action", "open world"],
+    publisher: "Rockstar",
   },
   {
     condition: "default",
@@ -14,6 +16,8 @@ const games: Omit<Game, "id">[] = [
     name: "Red Dead Redemption",
     oldPrice: null,
     price: 3000,
+    genre: ["action", "open world"],
+    publisher: "Rockstar",
   },
   {
     condition: "default",
@@ -21,6 +25,8 @@ const games: Omit<Game, "id">[] = [
     name: "Assasin's creed |",
     oldPrice: null,
     price: 3500,
+    genre: ["action", "open world"],
+    publisher: "Ubisoft",
   },
   {
     condition: "onSale",
@@ -28,6 +34,8 @@ const games: Omit<Game, "id">[] = [
     name: "Assasin's creed ||",
     oldPrice: 4000,
     price: 2500,
+    genre: ["action", "open world"],
+    publisher: "Ubisoft",
   },
   {
     condition: "new",
@@ -35,6 +43,17 @@ const games: Omit<Game, "id">[] = [
     name: "Cyberpunk 2077",
     oldPrice: null,
     price: 6000,
+    genre: ["action", "open world"],
+    publisher: "CD Projekt RED",
+  },
+  {
+    condition: "new",
+    img: "https://avatars.mds.yandex.net/i?id=9003f591d9bbddf968f4e8d8e6a2fc593c8ac9a8-5682239-images-thumbs&n=13&exp=1",
+    name: "Minecraft",
+    oldPrice: 2000,
+    price: 129,
+    genre: ["indy"],
+    publisher: "Mojang",
   },
 ];
 
@@ -44,15 +63,11 @@ export const getGames = async () => {
       res(
         games.map((item, idx) => {
           return {
-            condition: item.condition,
-            img: item.img,
-            name: item.name,
-            oldPrice: item.oldPrice,
-            price: item.price,
+            ...item,
             id: idx,
           };
         })
       );
-    }, 3000);
+    }, 500);
   });
 };

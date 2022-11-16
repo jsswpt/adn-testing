@@ -5,4 +5,6 @@ export type Game = {
   oldPrice: number | null;
   condition: "onSale" | "new" | "default";
   img: string;
+  genre: string[];
+  publisher: string;
 };
