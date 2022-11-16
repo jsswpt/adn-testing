@@ -250,6 +250,7 @@
       font-weight: 700;
     }
   }
+  @content;
 }
 
 @mixin span-regular {
@@ -265,7 +266,7 @@
   }
 }
 
-@mixin span-xsall {
+@mixin span-small {
   @include breakpoints.screen-xs {
     font-style: normal;
     font-size: 12px;
@@ -280,7 +281,7 @@
   }
 }
 
-@mixin span-xsall-bold {
+@mixin span-small-bold {
   @include breakpoints.screen-xs {
     @include span {
       font-weight: 700;
@@ -293,7 +294,7 @@
   }
 }
 
-@mixin span-xsall-regular {
+@mixin span-small-regular {
   @include breakpoints.screen-xs {
     @include span {
       font-weight: 400;
@@ -331,6 +332,7 @@
       font-weight: 700;
     }
   }
+  @content;
 }
 
 @mixin span-tiny-regular {

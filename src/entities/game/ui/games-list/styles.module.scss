@@ -7,17 +7,13 @@
   column-gap: units.$unit * 3;
   row-gap: units.$unit * 2;
 
+  list-style: none;
+
   @include breakpoints.screen-xs {
     grid-template-columns: repeat(2, calc(50% - (units.$unit * 3 * 0.5)));
   }
 
   @include breakpoints.screen-xl {
     grid-template-columns: repeat(4, calc(25% - (units.$unit * 3 * 0.75)));
-  }
-
-  list-style: none;
-
-  li {
-    background: white;
   }
 }

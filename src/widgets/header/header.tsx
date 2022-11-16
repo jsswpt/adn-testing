@@ -8,6 +8,7 @@ import { Login } from "shared/assets/icons/ui-icons/log-in";
 import { Search } from "shared/assets/icons/ui-icons/search";
 import { Input } from "shared/ui/input/input";
 import st from "./styles.module.scss";
+import { SearchGame } from "feature";
 
 export const Header = React.memo(() => {
   console.log("Header updated");
@@ -18,13 +19,7 @@ export const Header = React.memo(() => {
           <LogoFill />
         </div>
         <div className={classNames(st.header_wrap, st.input_wrap)}>
-          <div className={st.input_container}>
-            <div className={st.label}>
-              <p className={st.label_inner}>Каталог</p>
-            </div>
-            <Input fullWidth className={st.input} placeholder="Поиск" />
-            <Search className={`${st.icon} ${st.search}`} />
-          </div>
+          <SearchGame />
         </div>
         <nav className={classNames(st.header_wrap, st.nav_wrap)}>
           <ul className={st.nav_list}>

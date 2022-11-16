@@ -1,0 +1,96 @@
+@use "../../modules/units.module";
+@use "../../modules/breakpoints.module";
+@use "../../modules/typography.module";
+@use "../../modules/colors.module";
+
+.game_card {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  background-size: cover;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  @include breakpoints.screen-xs {
+    height: units.$unit * 31;
+  }
+  @include breakpoints.screen-md {
+    height: units.$unit * 61;
+  }
+  @include breakpoints.screen-xl {
+    height: units.$unit * 41;
+
+    &:hover {
+      .bg_fade {
+        background: linear-gradient(
+          180deg,
+          rgba(81, 81, 81, 0.18) 0%,
+          rgba(81, 81, 81, 0) 0%,
+          rgba(38, 38, 38, 0.52) 56.1%,
+          rgba(36, 36, 36, 0.91) 74.48%,
+          rgba(54, 54, 54, 0.946006) 85.14%,
+          #525252 94.97%
+        );
+      }
+    }
+  }
+}
+
+.bg_fade {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(81, 81, 81, 0) 40.55%,
+    rgba(38, 38, 38, 0.52) 56.1%,
+    rgba(36, 36, 36, 0.91) 72.56%,
+    #333333 100%
+  );
+}
+
+.extra_element {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.game_info {
+  z-index: 2;
+  padding: units.$unit * 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: units.$unit / 2;
+  width: 100%;
+}
+
+.name {
+  @include typography.h4 {
+    color: colors.$white;
+    text-align: center;
+  }
+}
+
+.old_price {
+  @include typography.h5 {
+    color: colors.$gray;
+    text-decoration: line-through;
+  }
+}
+
+.price {
+  @include typography.h4 {
+    color: colors.$orange;
+  }
+}

@@ -1,9 +1,13 @@
 import classNames from "classnames";
-import { GamesList } from "entities/game";
+import { gameModel, GamesList } from "entities/game";
+import { useEffect } from "react";
 import { FiltersBar, Header } from "widgets";
 import st from "./styles.module.scss";
 
-export const Catalog = () => {
+const Catalog = () => {
+  useEffect(() => {
+    gameModel.getGamesFx();
+  }, []);
   return (
     <>
       <Header />
@@ -28,3 +32,5 @@ export const Catalog = () => {
     </>
   );
 };
+
+export default Catalog;
