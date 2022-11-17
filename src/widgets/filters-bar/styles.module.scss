@@ -4,6 +4,6 @@
 .bar {
   position: sticky;
   top: units.$header-height;
-  height: 30vh;
   width: units.$filters-bar-width;
+  overflow-y: auto;
 }

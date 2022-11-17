@@ -39,17 +39,16 @@ export const $genres = gameModel.$games.map((games) => {
   return mappedGenres;
 });
 
-export const onGenreSelected = createEvent<number>();
+export const onGenreSelected = createEvent<GenreType>();
 export const onGenreRemoved = createEvent<number>();
 
 sample({
   source: $genres,
   clock: onGenreSelected,
-  fn: (genres, id) => {
-    const newGenres = genres.map((genre) =>
-      genre.id === id ? { ...genre, isActive: true } : genre
+  fn: (genres, genre) => {
+    const newGenres = genres.map((item) =>
+      item.id === genre.id ? { ...genre, isActive: true } : item
     );
-
     return newGenres;
   },
   target: $genres,
@@ -79,11 +78,10 @@ sample({
 });
 
 sample({
-  source: { genres: $genres, filters: gameModel.$filters },
+  source: gameModel.$filters,
   clock: onGenreSelected,
-  fn: ({ genres, filters }, id) => {
-    const { filterer } = genres.find((item) => item.id === id)!;
-    return [...filters, filterer];
+  fn: (filters, genre) => {
+    return [...filters, genre.filterer];
   },
   target: gameModel.$filters,
 });

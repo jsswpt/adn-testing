@@ -1,0 +1,72 @@
+@use "../../modules/typography.module";
+@use "../../modules/colors.module";
+@use "../../modules/units.module";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: fit-content;
+  width: units.$unit * 4;
+  height: units.$unit * 4;
+
+  transition: 0.16s ease-in-out;
+
+  &:active {
+    transform: scale(0.7);
+  }
+}
+
+.slider {
+  color: colors.$white;
+  width: units.$unit * 2;
+  height: units.$unit * 2;
+  transition: 0.32s;
+}
+
+.reversed {
+  transform: rotate(180deg);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 2;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: units.$unit;
+}
+
+.title {
+  @include typography.h4 {
+    color: colors.$white;
+  }
+}
+
+.middle {
+  transition: 0.32s ease-in-out;
+}
+
+.closed {
+  height: 0;
+  overflow: hidden;
+}
+
+.opened {
+  height: 360px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: colors.$gray;
+  }
+}

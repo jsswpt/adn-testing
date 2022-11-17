@@ -1,0 +1,21 @@
+@use "../../modules/colors.module";
+@use "../../modules/typography.module";
+@use "../../modules/units.module";
+
+.button {
+  background: none;
+  border: none;
+}
+
+.item {
+  padding: units.$unit * 1.5 0;
+  display: flex;
+  align-items: center;
+  gap: units.$unit;
+}
+
+.genre {
+  @include typography.span {
+    color: colors.$white;
+  }
+}
