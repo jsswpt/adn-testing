@@ -1,8 +1,15 @@
+import React, { Suspense } from "react";
 import classNames from "classnames";
-import { gameModel, GamesList } from "entities/game";
+import { gameModel } from "entities/game";
 import { useEffect } from "react";
 import { FiltersBar, Header } from "widgets";
+
 import st from "./styles.module.scss";
+import { Loader } from "shared/ui/loader/loader";
+
+const GamesList = React.lazy(
+  () => import("entities/game/ui/games-list/games-list")
+);
 
 const Catalog = () => {
   useEffect(() => {
@@ -23,7 +30,9 @@ const Catalog = () => {
             <div className={st.catalog_middle}>
               <FiltersBar />
               <div className={st.games_wrap}>
-                <GamesList />
+                <Suspense fallback={<Loader />}>
+                  <GamesList />
+                </Suspense>
               </div>
             </div>
           </div>

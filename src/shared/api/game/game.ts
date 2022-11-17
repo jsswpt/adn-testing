@@ -6,7 +6,6 @@ const games: Omit<Game, "id">[] = [
     genre: ["action", "adventure"],
     name: "ZERO Sievert",
     price: 710,
-
     img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1782120/header.jpg?t=1668530265",
     condition: "default",
     oldPrice: null,

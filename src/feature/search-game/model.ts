@@ -4,7 +4,6 @@ import { throttle } from "patronum";
 
 export const $query = createStore("");
 const $throttledQuery = createStore("");
-export const $isFiltred = createStore(false);
 
 export const queryEntered = createEvent<string>();
 
@@ -13,30 +12,28 @@ const throttledQueryEntered = throttle({
   timeout: 640,
 });
 
-$query.on(queryEntered, (state, payload) => {
-  return payload;
+$query.on(queryEntered, (_, query) => {
+  return query;
 });
 
 $throttledQuery.on(throttledQueryEntered, (_, query) => {
   return query;
 });
 
-$isFiltred.on(queryEntered, (state, payload) => {
-  return !!payload.trim();
-});
-
-const $searchedGames = combine(
-  [gameModel.$games, $throttledQuery],
-  ([games, query]) => {
+const $searchedGames = combine([gameModel.$games, $query], ([games, query]) => {
+  if (query.trim().length) {
     return games.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
   }
-);
+  return games;
+});
 
 sample({
-  clock: [$searchedGames, $isFiltred],
-  target: [gameModel.$filteredGames, gameModel.$isFiltred],
+  clock: $throttledQuery,
+  source: $searchedGames,
+
+  target: gameModel.$games,
 });
 
 export const model = {
