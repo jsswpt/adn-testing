@@ -8,8 +8,6 @@ export const getGamesFx = createEffect(async () => {
   return games;
 });
 
-// export const $filters = createStore<Filter[]>([]);
-
 export const $games = createStore<Game[]>([]);
 export const $filteredGames = createStore<Game[]>([]);
 

@@ -1,4 +1,6 @@
+import { Game } from "../game/game.type";
+
 export type Filter = {
-  id: string;
-  func: (item: any) => boolean;
+  id: number;
+  func: (item: Game) => boolean;
 };
