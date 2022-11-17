@@ -2,6 +2,43 @@ import { Game } from "./game.type";
 
 const games: Omit<Game, "id">[] = [
   {
+    publisher: "Modern Wolf",
+    genre: ["action", "adventure"],
+    name: "ZERO Sievert",
+    price: 710,
+
+    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1782120/header.jpg?t=1668530265",
+    condition: "default",
+    oldPrice: null,
+  },
+  {
+    publisher: "Joey Drew Studios",
+    genre: ["action", "adventure"],
+    name: "Bendy and the Dark Revival",
+    price: 515,
+    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1063660/header.jpg?t=1668499229",
+    oldPrice: null,
+    condition: "default",
+  },
+  {
+    publisher: "SCS Software",
+    genre: ["indie", "simulation"],
+    name: "Euro Truck Simulator 2",
+    price: 949,
+    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/227300/header.jpg?t=1668166019",
+    oldPrice: null,
+    condition: "default",
+  },
+  {
+    publisher: "NetEase Games Global",
+    genre: ["action", "adventure", "massively multiplayer"],
+    name: "NARAKA: BLADEPOINT",
+    price: 1199,
+    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1203220/header.jpg?t=1667553391",
+    oldPrice: null,
+    condition: "default",
+  },
+  {
     condition: "default",
     img: "https://shinobi-master-games.ru/images/Screenshots/GTA_5/GTA_5-247.jpg",
     name: "Grand Theft Auto V",
@@ -52,7 +89,7 @@ const games: Omit<Game, "id">[] = [
     name: "Minecraft",
     oldPrice: 2000,
     price: 129,
-    genre: ["indy"],
+    genre: ["indie"],
     publisher: "Mojang",
   },
 ];
