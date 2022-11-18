@@ -55,12 +55,12 @@
 }
 
 .closed {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
 }
 
 .opened {
-  height: 360px;
+  max-height: 360px;
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 4px;
