@@ -21,13 +21,22 @@ sample({
   target: $games,
 });
 
+// нужно алгоритм фильтрации, т.к.
+// при выборе нескольких жанров
+// алгоритм пытается найти игру, в которой, к примеру,
+// жанр - это экшн, инди и опен-ворлд, хотя, по задумке,
+// он должен искать игру, включающую один из жанров
+
 sample({
   source: $games,
   clock: $filters,
   fn: (games, filters) => {
     return games.filter((game) => {
       const isFits = filters.map((filter) => filter.func(game));
-      return isFits.includes(true);
+      if (isFits.includes(false)) {
+        return false;
+      }
+      return true;
     });
   },
   target: $filteredGames,

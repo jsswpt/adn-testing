@@ -11,7 +11,6 @@ import st from "./styles.module.scss";
 import { SearchGame } from "feature";
 
 export const Header = React.memo(() => {
-  console.log("Header updated");
   return (
     <header className={st.header}>
       <div className={st.container}>

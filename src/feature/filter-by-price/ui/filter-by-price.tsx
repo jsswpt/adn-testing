@@ -14,6 +14,7 @@ export const FilterByPrice = () => {
           onChange={(evt) => model.setMinPrice(Number(evt.currentTarget.value))}
           type="number"
           placeholder="От"
+          min={1}
           rounded="full"
           className={st.input + " " + st.input_from}
           value={minPrice}

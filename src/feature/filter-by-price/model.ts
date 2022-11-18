@@ -5,7 +5,7 @@ import { Filter, FilterFunc } from "shared/api/filter/filter.type";
 import { Game } from "shared/api/game/game.type";
 import { getRandomId } from "shared/lib/getRandomId";
 
-const $minPrice = createStore<number>(0);
+const $minPrice = createStore<number>(1);
 const $maxPrice = createStore<number>(10000);
 
 const id = getRandomId();

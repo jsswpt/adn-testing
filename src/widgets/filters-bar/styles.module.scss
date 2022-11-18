@@ -3,12 +3,21 @@
 
 .bar {
   position: sticky;
-  top: 120px;
+  top: calc(units.$header-height + units.$unit * 3);
+  width: units.$filters-bar-width;
+
   display: flex;
   flex-direction: column;
   gap: units.$unit * 3;
-  width: units.$filters-bar-width;
+
   height: fit-content;
+  max-height: 100vh;
+
   flex-shrink: 0;
-  // overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }

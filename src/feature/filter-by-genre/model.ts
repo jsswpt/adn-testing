@@ -26,7 +26,6 @@ export const $genres = gameModel.$games.map((games) => {
   const mappedGenres: GenreType[] = sortedAndFilteredGenres.map(
     (genre, idx) => {
       const id = getRandomId();
-      console.log(id);
       return {
         isActive: false,
         id: id,

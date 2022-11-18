@@ -12,7 +12,7 @@ type FilterBarBlockLayoutProps = {
 export const FilterBarBlockLayout = (props: FilterBarBlockLayoutProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={st.wrap}>
+    <div className={classNames(st.wrap)}>
       <div className={st.top}>
         <p className={st.title}>{props.title}</p>
         {props.withPopup && (
