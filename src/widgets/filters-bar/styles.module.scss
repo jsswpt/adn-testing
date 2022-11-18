@@ -4,7 +4,11 @@
 .bar {
   position: sticky;
   top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 3;
   width: units.$filters-bar-width;
   height: fit-content;
+  flex-shrink: 0;
   // overflow-y: auto;
 }

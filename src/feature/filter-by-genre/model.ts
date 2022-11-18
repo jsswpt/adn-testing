@@ -1,10 +1,11 @@
 import { createEvent, sample } from "effector";
 import { gameModel } from "entities/game";
 import { Filter } from "shared/api/filter/filter.type";
+import { getRandomId } from "shared/lib/getRandomId";
 
 type GenreType = {
   isActive: boolean;
-  id: number;
+  id: string;
   name: string;
   filterer: Filter;
 };
@@ -23,24 +24,28 @@ export const $genres = gameModel.$games.map((games) => {
   });
 
   const mappedGenres: GenreType[] = sortedAndFilteredGenres.map(
-    (genre, idx) => ({
-      isActive: false,
-      id: idx,
-      name: genre,
-      filterer: {
-        id: idx,
-        func: (game) => {
-          return game.genre.includes(genre);
+    (genre, idx) => {
+      const id = getRandomId();
+      console.log(id);
+      return {
+        isActive: false,
+        id: id,
+        name: genre,
+        filterer: {
+          id: id,
+          func: (game) => {
+            return game.genre.includes(genre);
+          },
         },
-      },
-    })
+      };
+    }
   );
 
   return mappedGenres;
 });
 
 export const onGenreSelected = createEvent<GenreType>();
-export const onGenreRemoved = createEvent<number>();
+export const onGenreRemoved = createEvent<string>();
 
 sample({
   source: $genres,

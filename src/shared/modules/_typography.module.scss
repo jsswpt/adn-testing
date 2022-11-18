@@ -311,14 +311,13 @@
     font-style: normal;
     font-size: 10px;
     line-height: 100%;
-    @content;
   }
   @include breakpoints.screen-xl {
     font-style: normal;
     font-size: 12px;
     line-height: 100%;
-    @content;
   }
+  @content;
 }
 
 @mixin span-tiny-bold {
@@ -346,4 +345,5 @@
       font-weight: 400;
     }
   }
+  @content;
 }

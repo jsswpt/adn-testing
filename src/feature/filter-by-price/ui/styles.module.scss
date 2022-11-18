@@ -1,0 +1,23 @@
+@use "../../../shared/modules/typography.module";
+@use "../../../shared/modules/colors.module";
+
+.filter_by_price {
+}
+
+.input_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input {
+  position: relative;
+  width: 96px;
+}
+
+.idk {
+  @include typography.span-tiny-regular {
+    color: colors.$gray;
+    text-align: center;
+  }
+}

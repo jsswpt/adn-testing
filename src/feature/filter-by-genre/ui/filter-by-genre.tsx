@@ -20,5 +20,5 @@ export const FilterByGenre = React.memo(() => {
       />
     </li>
   ));
-  return <div>{list}</div>;
+  return <ul>{list}</ul>;
 });

@@ -1,6 +1,8 @@
 import { Game } from "../game/game.type";
 
 export type Filter = {
-  id: number;
+  id: string;
   func: (item: Game) => boolean;
 };
+
+export type FilterFunc = Omit<Filter, "id">;

@@ -2,6 +2,7 @@
 @use "../../modules/typography.module";
 
 .input {
+  padding: 0 0 0 units.$unit * 3;
   border: 1px solid white;
   outline: none;
   background: none;
@@ -9,6 +10,16 @@
   height: units.$unit * 5;
 
   @include typography.body2;
+}
+
+.rounded_left {
+  border-radius: 40px;
+}
+.rounded_right {
+  border-radius: 40px;
+}
+.rounded_full {
+  border-radius: 40px;
 }
 
 .fullWidth {

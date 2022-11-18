@@ -15,13 +15,15 @@ export const FilterBarBlockLayout = (props: FilterBarBlockLayoutProps) => {
     <div className={st.wrap}>
       <div className={st.top}>
         <p className={st.title}>{props.title}</p>
-        <button className={st.button} onClick={() => setIsOpen(!isOpen)}>
-          <Slider
-            className={classNames(st.slider, {
-              [st.reversed]: !isOpen,
-            })}
-          />
-        </button>
+        {props.withPopup && (
+          <button className={st.button} onClick={() => setIsOpen(!isOpen)}>
+            <Slider
+              className={classNames(st.slider, {
+                [st.reversed]: !isOpen,
+              })}
+            />
+          </button>
+        )}
       </div>
       {props.children && (
         <div
