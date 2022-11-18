@@ -23,6 +23,7 @@ export const Modal = (props: ModalProps) => {
       document.body.style.overflow = "hidden";
     } else {
       el.remove();
+      document.body.style.overflow = "auto";
     }
   }, [props.isOpen]);
   return ReactDOM.createPortal(props.children, el);

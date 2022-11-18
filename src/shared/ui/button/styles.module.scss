@@ -1,0 +1,32 @@
+@use "../../modules/units.module";
+@use "../../modules/colors.module";
+@use "../../modules/typography.module";
+
+.button {
+  padding: 0 units.$unit * 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: units.$unit * 2;
+  height: units.$input-button-height;
+  background: none;
+  border: none;
+  color: colors.$white;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  svg {
+    display: flex;
+  }
+}
+
+.outlined {
+  border-radius: 40px;
+  border: 1px solid colors.$white;
+}
+
+.fullWidth {
+  width: 100%;
+}

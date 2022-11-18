@@ -16,6 +16,7 @@
 }
 
 .header {
+  padding: 0 units.$unit * 6;
   z-index: 100;
   position: fixed;
   width: 100%;
@@ -23,21 +24,38 @@
   align-items: center;
   background: colors.$background;
   height: units.$header-height;
+
+  @include breakpoints.screen-xs {
+    padding: units.$unit * 3;
+  }
 }
 
 .container {
-  padding: 0 units.$unit * 6;
   width: 100%;
-
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0;
 
-  gap: 176px;
+  @include breakpoints.screen-xl {
+    gap: 176px;
+  }
 }
 
 .logo_wrap {
   display: flex;
+}
+
+.logo {
+  @include breakpoints.screen-xs {
+    width: 106px;
+    height: 20px;
+  }
+  @include breakpoints.screen-md {
+    width: 183px;
+    height: 45.5px;
+  }
 }
 
 .input_wrap {

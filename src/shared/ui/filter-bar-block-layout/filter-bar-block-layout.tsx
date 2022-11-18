@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import classNames from "classnames";
 import st from "./styles.module.scss";
 import { Slider } from "shared/assets/icons/ui-icons/slidder-up";
@@ -11,6 +11,7 @@ type FilterBarBlockLayoutProps = {
 
 export const FilterBarBlockLayout = (props: FilterBarBlockLayoutProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={classNames(st.wrap)}>
       <div className={st.top}>

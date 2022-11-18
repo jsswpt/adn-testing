@@ -58,10 +58,26 @@
 }
 
 .extra_element {
+  z-index: 2;
+  padding: units.$unit / 2 units.$unit;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  background: colors.$background;
+  border-radius: 0px 0px 14px 14px;
+}
+
+.extra_element_inner {
+  @include typography.span-tiny-bold;
+}
+
+.new {
+  color: colors.$label-green;
+}
+
+.sale {
+  color: colors.$label-blue;
 }
 
 .game_info {

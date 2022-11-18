@@ -1,0 +1,31 @@
+@use "../../modules/breakpoints.module";
+@use "../../modules/units.module";
+@use "../../modules/container.module";
+
+.container {
+  @include container.container;
+}
+
+.advantages_grid {
+  display: grid;
+  column-gap: units.$unit * 3;
+
+  @include breakpoints.screen-xs {
+    grid-template-columns: repeat(1, 100%);
+    row-gap: units.$unit * 2;
+  }
+  @include breakpoints.screen-md {
+    grid-template-columns: repeat(
+      2,
+      calc(breakpoints.$md / 2 - (units.$unit * 3 * 0.5))
+    );
+    row-gap: units.$unit * 2;
+  }
+  @include breakpoints.screen-xl {
+    grid-template-columns: repeat(
+      4,
+      calc(breakpoints.$xl / 4 - (units.$unit * 3 * 0.75))
+    );
+    row-gap: units.$unit * 2;
+  }
+}

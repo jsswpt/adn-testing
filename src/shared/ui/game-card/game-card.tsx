@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useEffect, useRef } from "react";
 import { Game } from "shared/api/game/game.type";
 import st from "./styles.module.scss";
@@ -16,9 +17,23 @@ export const GameCard = (props: GameCardProps) => {
   return (
     <div ref={cardRef} className={st.game_card}>
       <div className={st.bg_fade}></div>
-      <div className={st.extra_element}>
-        {props.condition && props.condition}
-      </div>
+      {props.condition !== "default" && (
+        <div
+          className={classNames(st.extra_element, {
+            [st.new]: props.condition === "new",
+            [st.sale]: props.condition === "sale",
+          })}
+        >
+          <p
+            className={classNames(st.extra_element_inner, {
+              [st.new]: props.condition === "new",
+              [st.sale]: props.condition === "sale",
+            })}
+          >
+            {props.condition === "new" ? "Новинка" : "Скидка"}
+          </p>
+        </div>
+      )}
       <div className={st.game_info}>
         <h4 className={st.name}>{props.name}</h4>
         {props.oldPrice && <p className={st.old_price}>{props.oldPrice}</p>}

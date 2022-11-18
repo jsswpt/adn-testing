@@ -3,7 +3,7 @@ export type Game = {
   name: string;
   price: number;
   oldPrice: number | null;
-  condition: "onSale" | "new" | "default";
+  condition: "sale" | "new" | "default";
   img: string;
   genre: string[];
   publisher: string;

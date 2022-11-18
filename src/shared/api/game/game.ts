@@ -65,7 +65,7 @@ const games: Omit<Game, "id">[] = [
     publisher: "Ubisoft",
   },
   {
-    condition: "onSale",
+    condition: "sale",
     img: "https://i.playground.ru/e/d3kkyGdp-bepsovAhk3NHg.jpeg",
     name: "Assasin's creed ||",
     oldPrice: 4000,

@@ -10,7 +10,7 @@
 
 .main {
   padding-top: units.$header-height + units.$unit * 3;
-  padding-bottom: units.$unit * 3;
+  padding-bottom: units.$unit * 10;
 }
 
 .broadcrumb {
@@ -23,6 +23,30 @@
   gap: units.$unit * 5;
 }
 
+.catalog_top {
+  @include breakpoints.screen-xs {
+    display: flex;
+    flex-direction: column;
+    gap: units.$unit * 4;
+
+    .button {
+      width: 100%;
+    }
+  }
+  @include breakpoints.screen-md {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    .button {
+      width: fit-content;
+    }
+  }
+  @include breakpoints.screen-xl {
+    display: block;
+  }
+}
+
 .title {
   @include typography.h1 {
     color: colors.$white;
@@ -30,12 +54,50 @@
 }
 
 .catalog_middle {
+  margin-bottom: units.$unit * 10;
   display: flex;
   gap: units.$catalog-middle-gap;
 }
 
 .games_wrap {
-  width: calc(
-    breakpoints.$xl - units.$filters-bar-width - units.$catalog-middle-gap
-  );
+  margin-bottom: units.$unit * 10;
+  width: 100%;
+
+  @include breakpoints.screen-xl {
+    width: calc(
+      breakpoints.$xl - units.$filters-bar-width - units.$catalog-middle-gap
+    );
+  }
+}
+
+.buy_games {
+  margin-bottom: 32px;
+}
+
+.buy_games_title {
+  margin-bottom: units.$unit * 3;
+  @include typography.h3 {
+    color: colors.$white;
+  }
+}
+
+.description_text {
+  &:not(:last-child) {
+    margin-bottom: units.$unit * 2;
+  }
+  @include typography.body1 {
+    color: colors.$white;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: colors.$link;
+}
+
+.description_title {
+  margin-bottom: units.$unit * 3;
+  @include typography.h4 {
+    color: colors.$white;
+  }
 }

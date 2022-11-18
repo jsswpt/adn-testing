@@ -13,7 +13,7 @@ export const useScreen = (): ScreenTypes => {
 
   if (width < 768) {
     return "mobile";
-  } else if (width > 768 && width < 1181) {
+  } else if (width > 768 && width < 1176) {
     return "tablet";
   } else {
     return "desktop";

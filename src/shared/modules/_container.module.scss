@@ -1,14 +1,18 @@
 @use "./breakpoints.module";
+@use "./units.module";
 
 @mixin container {
   @include breakpoints.screen-xs {
+    padding: 0 units.$unit * 2;
     width: 100%;
   }
   @include breakpoints.screen-md {
+    padding: 0;
     width: breakpoints.$md;
     margin: 0 auto;
   }
   @include breakpoints.screen-xl {
+    padding: 0;
     width: breakpoints.$xl;
     margin: 0 auto;
   }

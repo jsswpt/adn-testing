@@ -1,17 +1,11 @@
 @use "../../shared/modules/units.module";
 @use "../../shared/modules/breakpoints.module";
+@use "../../shared/modules/colors.module";
 
 .bar {
-  position: sticky;
-  top: calc(units.$header-height + units.$unit * 3);
-  width: units.$filters-bar-width;
-
   display: flex;
   flex-direction: column;
   gap: units.$unit * 3;
-
-  height: fit-content;
-  max-height: 100vh;
 
   flex-shrink: 0;
   overflow-x: hidden;
@@ -19,5 +13,23 @@
 
   &::-webkit-scrollbar {
     width: 0;
+  }
+
+  @include breakpoints.screen-xs {
+    position: fixed;
+    top: 0;
+    padding: units.$unit * 4;
+    height: 100vh;
+    background: colors.$dark-gray;
+    width: units.$filters-bar-width + units.$unit * 8;
+  }
+  @include breakpoints.screen-xl {
+    padding: 0;
+    position: sticky;
+    top: calc(units.$header-height + units.$unit * 3);
+    width: units.$filters-bar-width;
+    height: fit-content;
+    max-height: 100vh;
+    background: colors.$background;
   }
 }
