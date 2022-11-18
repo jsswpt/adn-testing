@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/adn-testing/static/css/main.85441de4.css",
+    "main.js": "/adn-testing/static/js/main.9af344bc.js",
+    "static/css/236.5e1dca76.chunk.css": "/adn-testing/static/css/236.5e1dca76.chunk.css",
+    "static/js/236.4aab31fb.chunk.js": "/adn-testing/static/js/236.4aab31fb.chunk.js",
+    "static/css/961.786354fb.chunk.css": "/adn-testing/static/css/961.786354fb.chunk.css",
+    "static/js/961.d183f1bf.chunk.js": "/adn-testing/static/js/961.d183f1bf.chunk.js",
+    "static/js/321.9e2df66d.chunk.js": "/adn-testing/static/js/321.9e2df66d.chunk.js",
+    "index.html": "/adn-testing/index.html",
+    "main.85441de4.css.map": "/adn-testing/static/css/main.85441de4.css.map",
+    "main.9af344bc.js.map": "/adn-testing/static/js/main.9af344bc.js.map",
+    "236.5e1dca76.chunk.css.map": "/adn-testing/static/css/236.5e1dca76.chunk.css.map",
+    "236.4aab31fb.chunk.js.map": "/adn-testing/static/js/236.4aab31fb.chunk.js.map",
+    "961.786354fb.chunk.css.map": "/adn-testing/static/css/961.786354fb.chunk.css.map",
+    "961.d183f1bf.chunk.js.map": "/adn-testing/static/js/961.d183f1bf.chunk.js.map",
+    "321.9e2df66d.chunk.js.map": "/adn-testing/static/js/321.9e2df66d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85441de4.css",
+    "static/js/main.9af344bc.js"
+  ]
+}
